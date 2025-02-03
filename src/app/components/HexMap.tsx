@@ -1,7 +1,6 @@
 import React from "react";
 
 const Hexmap = ({ candidatesList, candidateData, selectedCandiadateData }) => {
-  console.log("seleced,", selectedCandiadateData);
   return (
     <div className="overflow-x-auto p-4 flex flex-row">
       <div className="flex flex-col">
