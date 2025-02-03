@@ -1,6 +1,13 @@
 import React from "react";
 
 const Hexmap = ({ candidatesList, candidateData, selectedCandiadateData }) => {
+  const colorVariants = {
+    level0: "bg-level-0",
+    level1: "bg-level-1",
+    level2: "bg-level-2",
+    level3: "bg-level-3",
+    level4: "bg-level-4",
+  };
   return (
     <div className="overflow-x-auto p-4 flex flex-row">
       <div className="flex flex-col">
@@ -22,7 +29,9 @@ const Hexmap = ({ candidatesList, candidateData, selectedCandiadateData }) => {
                 <div
                   key={idx}
                   className={`gap-2 h-6 w-6 flex items-center justify-center border-solid border-indigo-500 ${
-                    true ? `bg-level-${skill.consensus_score}` : "bg-gray-100"
+                    true
+                      ? colorVariants[`level${skill.consensus_score}`]
+                      : "bg-gray-100"
                   }`}
                 >
                   {skill.consensus_score}
